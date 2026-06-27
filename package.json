@@ -1,0 +1,68 @@
+{
+  "name": "@causal-order/transport",
+  "version": "0.1.0",
+  "description": "WebSocket + JSON transport layer for normalizing node traffic into the event contract expected by the causal-order stack.",
+  "author": "Gazali Ahmad",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GazaliAhmad/causal-order-transport.git"
+  },
+  "homepage": "https://github.com/GazaliAhmad/causal-order-transport#readme",
+  "bugs": {
+    "url": "https://github.com/GazaliAhmad/causal-order-transport/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./.build/src/index.js",
+  "types": "./.build/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./.build/src/index.d.ts",
+      "import": "./.build/src/index.js"
+    }
+  },
+  "files": [
+    ".build/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "causal-order",
+    "transport",
+    "websocket",
+    "json",
+    "event-streams",
+    "distributed-systems",
+    "message-transport",
+    "normalization",
+    "runtime-adapter",
+    "ingress-layer"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test:smoke": "npm run build && node scripts/smoke.mjs",
+    "ci": "npm run check && npm run test:smoke && npm run pack:check",
+    "prepack": "npm run build",
+    "pack:check": "npm pack --dry-run",
+    "publish:dry-run": "npm publish --dry-run",
+    "release:check": "npm run ci && npm run publish:dry-run"
+  },
+  "dependencies": {
+    "causal-order": "^1.0.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "@types/ws": "^8.18.1",
+    "typescript": "^6.0.3"
+  }
+}
