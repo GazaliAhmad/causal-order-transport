@@ -11,8 +11,11 @@ All notable changes to `@causal-order/transport` will be documented in this file
 - Added a smoke-level verification script for the published `@causal-order/testing` runtime package.
 - Added a transport-aware wall-clock runtime harness for long-running `WebSocket -> transport -> dedupe -> causal-order` validation with timing, heartbeats, anomaly logs, and run summaries.
 - Added wall-clock memory summary fields including `maxRssBytes`, `finalRssBytes`, and `avgRssBytes`.
+- Added heap-oriented wall-clock memory fields including `heapUsedBytes`, `heapTotalBytes`, `externalBytes`, and `arrayBuffersBytes`.
+- Reworked wall-clock latency tracking so the harness uses running summaries instead of retaining full in-memory latency sample arrays.
 - Moved `@causal-order/testing` to `devDependencies` so publish installs stay runtime-focused.
 - Confirmed the published npm tarball is limited to built runtime files and package documentation.
+- Documented the completed `2h`, `4h`, and `8h` validation runs, including the heap-tracked `8h` rerun used to reduce transport-leak concern after the harness memory fix.
 
 ## 0.1.0
 

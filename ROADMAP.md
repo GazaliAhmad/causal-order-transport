@@ -4,7 +4,7 @@
 
 `@causal-order/transport` is currently the WebSocket + JSON transport layer for the `causal-order` stack.
 
-The near-term goal is to harden that one ingress path well before expanding into additional transport-specific adapters.
+The current goal is to keep hardening that ingress path as a deployable runtime layer before expanding into additional transport-specific adapters.
 
 The package is intended to sit here:
 
@@ -12,23 +12,16 @@ The package is intended to sit here:
 WebSocket + JSON -> @causal-order/transport -> @causal-order/dedupe -> causal-order
 ```
 
-## Near Term
+## Current Baseline
 
-- Publish `0.1.1` with the current packaging, README, changelog, and validation improvements.
-- Complete longer wall-clock validation runs:
-  - `4h`
-  - `8h`
-  - optionally `12h`
-- Confirm the long-run validation remains healthy on:
-  - memory stability
-  - bounded dedupe cache behavior
-  - anomaly severity distribution
-  - final `accepted == ordered` completion behavior
+- `0.1.1` is the publish baseline for the current package state.
+- The WebSocket + JSON path has completed `2h`, `4h`, and `8h` wall-clock validation runs.
+- The heap-tracked `8h` rerun is the current memory baseline after the harness memory-retention fix.
+- The current validation record supports the package as a deployable ingress layer for the present stack shape.
 - Keep the npm package surface small and runtime-focused.
 
-## Stabilization
+## Next Work
 
-- Treat the WebSocket + JSON path as the supported ingress contract for `v0.x`.
 - Harden the transport contract around:
   - start and stop behavior
   - peer lifecycle reporting
@@ -39,6 +32,12 @@ WebSocket + JSON -> @causal-order/transport -> @causal-order/dedupe -> causal-or
   - missing required fields
   - reconnect behavior
   - duplicate replay across reconnect
+- Keep confirming long-run behavior on:
+  - bounded dedupe cache behavior
+  - anomaly severity distribution
+  - final `accepted == ordered` completion behavior
+  - stable memory behavior with the corrected harness
+- Optionally run `12h` only if longer endurance characterization is still useful after the corrected `8h` memory profile.
 - Decide whether transport-side `send()` should handle bigint-backed event fields more directly.
 
 ## Documentation
@@ -47,7 +46,7 @@ WebSocket + JSON -> @causal-order/transport -> @causal-order/dedupe -> causal-or
 - Document the package as:
   - WebSocket + JSON transport
   - normalization boundary before `@causal-order/dedupe`
-  - reference ingress layer for the current stack
+  - deployable ingress layer for the current stack
 - Keep validation visible without turning the npm page into a repo workflow guide.
 
 ## Expansion Boundary
@@ -61,9 +60,9 @@ WebSocket + JSON -> @causal-order/transport -> @causal-order/dedupe -> causal-or
 ## Version Path
 
 - `0.1.1`
-  packaging cleanup, README tightening, validation additions, publish readiness
+  packaging cleanup, npm-facing docs, wall-clock validation, heap tracking, and harness memory-retention fix
 - `0.1.x`
-  WebSocket + JSON contract hardening and endurance validation
+  WebSocket + JSON contract hardening and any follow-up memory/operational tuning
 - `0.2.0`
   only if the public transport behavior or contract meaningfully changes
 - `1.0.0`

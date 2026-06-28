@@ -43,6 +43,7 @@
     "websocket-json",
     "ingress",
     "runtime",
+    "esm",
     "event-envelope",
     "distributed-events",
     "event-streams",

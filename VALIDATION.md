@@ -51,6 +51,8 @@ Artifacts are written under `artifacts/transport-runs/`.
   completed with `generated = accepted = ordered = 249771`, `droppedDuplicates = 849`, warnings only, and RSS stable with `avgRssBytes = 66100339` and `maxRssBytes = 71872512`
 - `8h`
   completed with `generated = accepted = ordered = 501128`, `droppedDuplicates = 1613`, warnings only, `avgRssBytes = 84308196`, and `maxRssBytes = 95625216`
+- `8h` rerun with corrected harness and heap tracking
+  completed with `generated = accepted = ordered = 501569`, `droppedDuplicates = 1684`, warnings only, `avgRssBytes = 65315270`, `maxRssBytes = 67874816`, `avgHeapUsedBytes = 12548957`, and `maxHeapUsedBytes = 17138544`
 
 These runs support the longer `8h` validation step because:
 
@@ -73,7 +75,7 @@ It is also important to note that the earlier wall-clock harness retained full l
 
 The wall-clock harness has since been updated so latency tracking uses running summaries rather than retaining full in-memory sample arrays. That change reduces harness-side memory pressure and makes later endurance runs more useful for diagnosing the actual transport/runtime path.
 
-The next diagnostic step is a fresh `8h` rerun with the corrected harness and the additional memory tracking now recorded by the wall-clock runtime:
+The next diagnostic step was a fresh `8h` rerun with the corrected harness and the additional memory tracking now recorded by the wall-clock runtime:
 
 - `rssBytes`
 - `heapUsedBytes`
@@ -81,8 +83,17 @@ The next diagnostic step is a fresh `8h` rerun with the corrected harness and th
 - `externalBytes`
 - `arrayBuffersBytes`
 
-That rerun is intended to determine whether the observed long-run RSS rise reflects:
+That rerun was intended to determine whether the observed long-run RSS rise reflects:
 
 - a small heap leak
 - external or buffer retention
 - or normal long-lived runtime memory behavior
+
+The rerun materially reduced the transport-leak concern:
+
+- RSS was substantially lower than in the earlier `8h` run
+- `heapUsedBytes` did not show runaway growth
+- `externalBytes` and `arrayBuffersBytes` stayed comparatively small and stable
+- the pipeline still completed cleanly with warning-only anomalies and final `accepted = ordered`
+
+Taken together, the rerun suggests the earlier long-run memory rise was significantly influenced by harness-side retention rather than providing strong evidence of a `/transport` micro leak.

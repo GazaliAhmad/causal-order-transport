@@ -2,7 +2,7 @@
 
 WebSocket + JSON transport layer for normalizing node traffic into the event contract expected by the `causal-order` stack.
 
-This package currently implements one transport path: WebSocket + JSON.
+This package is the deployable WebSocket + JSON transport layer for the current `causal-order` stack.
 
 ## Scope
 
@@ -10,7 +10,7 @@ Supported ingress path:
 
 - WebSocket + JSON
 
-Other ingress shapes can be implemented separately against the same event contract and normalization boundary.
+Other ingress shapes can be implemented separately against the same event contract and normalization boundary when needed.
 
 ## Relationship to `causal-order` and `@causal-order/dedupe`
 
@@ -45,6 +45,11 @@ This package provides:
 ```bash
 npm install @causal-order/transport @causal-order/dedupe causal-order
 ```
+
+Runtime requirements:
+
+- Node.js `20+`
+- ESM package usage
 
 ## Quick Start
 
@@ -132,11 +137,16 @@ The intended public API is transport-first:
 
 ## Validation
 
-Validation details are documented separately in [`VALIDATION.md`](https://github.com/GazaliAhmad/causal-order-transport/blob/main/VALIDATION.md).
+Validation details, including completed `2h`, `4h`, and `8h` wall-clock runs, are documented separately in [`VALIDATION.md`](https://github.com/GazaliAhmad/causal-order-transport/blob/main/VALIDATION.md).
+
+## Conduct
+
+Project conduct expectations are documented in [`CODE_OF_CONDUCT.md`](https://github.com/GazaliAhmad/causal-order-transport/blob/main/CODE_OF_CONDUCT.md).
 
 ## Notes
 
 - This is the transport layer, not the dedupe layer and not the ordering core.
-- The v0.1 package is designed for multiple adapters later, but intentionally implements only the WebSocket + JSON path first.
+- This is an ESM-only package.
+- The current package surface is intentionally centered on the WebSocket + JSON path.
 - If another deployment needs Kafka, a broker bridge, or another wire protocol, that adapter can be built separately rather than forcing every transport mode into this package immediately.
 - The normalizer is opinionated but replaceable. If your node wire format differs, provide your own `normalizeMessage` function.
