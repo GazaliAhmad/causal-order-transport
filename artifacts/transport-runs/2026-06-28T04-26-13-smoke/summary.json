@@ -1,0 +1,226 @@
+{
+  "outcome": {
+    "status": "completed",
+    "failure": null
+  },
+  "config": {
+    "durationMs": 20000,
+    "steadyForMs": 10000,
+    "reportEveryMs": 5000,
+    "maxLateArrivalMs": 60000,
+    "maxDrainMs": 120000,
+    "batchSize": 200,
+    "outputDir": "artifacts/transport-runs",
+    "nodeIds": [
+      "edge-a",
+      "edge-b",
+      "edge-c",
+      "edge-d",
+      "edge-e",
+      "edge-f",
+      "edge-g",
+      "edge-h"
+    ],
+    "profile": "typical-real-world-mesh",
+    "profileDescription": "Ordinary production-like mesh with slight hotspotting, moderate cross-node coordination, low retry noise, and short latency spikes rather than hostile stalls.",
+    "runName": "smoke"
+  },
+  "artifacts": {
+    "runDir": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-26-13-smoke",
+    "summaryPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-26-13-smoke\\summary.json",
+    "heartbeatPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-26-13-smoke\\heartbeat.ndjson",
+    "anomaliesPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-26-13-smoke\\anomalies.ndjson",
+    "configPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-26-13-smoke\\config.json"
+  },
+  "timing": {
+    "wallStartedAtIso": "2026-06-28T04:26:13.113Z",
+    "wallEndedAtIso": "2026-06-28T04:26:34.482Z",
+    "wallElapsedMs": 21369,
+    "generationStoppedAtIso": "2026-06-28T04:26:34.143Z",
+    "drainCompletedAtIso": "2026-06-28T04:26:34.471Z"
+  },
+  "process": {
+    "rssBytes": {
+      "samples": 6,
+      "maxRssBytes": 59043840,
+      "finalRssBytes": 58150912,
+      "avgRssBytes": 57472341
+    },
+    "heapUsedBytes": {
+      "samples": 6,
+      "maxHeapUsedBytes": 9196776,
+      "finalHeapUsedBytes": 8775176,
+      "avgHeapUsedBytes": 8591254
+    },
+    "heapTotalBytes": {
+      "samples": 6,
+      "maxHeapTotalBytes": 12681216,
+      "finalHeapTotalBytes": 10584064,
+      "avgHeapTotalBytes": 10758827
+    },
+    "externalBytes": {
+      "samples": 6,
+      "maxExternalBytes": 2750416,
+      "finalExternalBytes": 2708260,
+      "avgExternalBytes": 2718033
+    },
+    "arrayBuffersBytes": {
+      "samples": 6,
+      "maxArrayBuffersBytes": 109259,
+      "finalArrayBuffersBytes": 67103,
+      "avgArrayBuffersBytes": 76883
+    }
+  },
+  "transport": {
+    "receivedEvents": 332,
+    "peerHints": 0,
+    "errors": 0,
+    "peerStatesByStatus": {
+      "connected": 8
+    },
+    "normalizedByNode": {
+      "edge-f": 31,
+      "edge-b": 48,
+      "edge-e": 35,
+      "edge-c": 45,
+      "edge-h": 40,
+      "edge-g": 53,
+      "edge-a": 47,
+      "edge-d": 33
+    },
+    "maxEventQueueDepth": 8,
+    "maxPendingDeliveries": 15,
+    "latencyMs": {
+      "count": 332,
+      "minMs": 15,
+      "maxMs": 3402,
+      "avgMs": 170.273
+    }
+  },
+  "generator": {
+    "generatedEvents": 332,
+    "sentEvents": 332,
+    "duplicatesInjected": 0,
+    "sendErrors": 0,
+    "activeClients": 0,
+    "perNode": {
+      "edge-a": {
+        "generatedEvents": 47,
+        "sentEvents": 47,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 11,
+        "crossNodeDependencies": 18,
+        "maxPendingDeliveries": 14,
+        "lastScheduledSendAtMs": 1782620792792
+      },
+      "edge-b": {
+        "generatedEvents": 48,
+        "sentEvents": 48,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 13,
+        "crossNodeDependencies": 13,
+        "maxPendingDeliveries": 15,
+        "lastScheduledSendAtMs": 1782620794382
+      },
+      "edge-c": {
+        "generatedEvents": 45,
+        "sentEvents": 45,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 14,
+        "crossNodeDependencies": 19,
+        "maxPendingDeliveries": 12,
+        "lastScheduledSendAtMs": 1782620793085
+      },
+      "edge-d": {
+        "generatedEvents": 33,
+        "sentEvents": 33,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 9,
+        "crossNodeDependencies": 18,
+        "maxPendingDeliveries": 13,
+        "lastScheduledSendAtMs": 1782620791798
+      },
+      "edge-e": {
+        "generatedEvents": 35,
+        "sentEvents": 35,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 9,
+        "crossNodeDependencies": 15,
+        "maxPendingDeliveries": 13,
+        "lastScheduledSendAtMs": 1782620792770
+      },
+      "edge-f": {
+        "generatedEvents": 31,
+        "sentEvents": 31,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 10,
+        "crossNodeDependencies": 16,
+        "maxPendingDeliveries": 10,
+        "lastScheduledSendAtMs": 1782620791477
+      },
+      "edge-g": {
+        "generatedEvents": 53,
+        "sentEvents": 53,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 9,
+        "crossNodeDependencies": 23,
+        "maxPendingDeliveries": 13,
+        "lastScheduledSendAtMs": 1782620793120
+      },
+      "edge-h": {
+        "generatedEvents": 40,
+        "sentEvents": 40,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 9,
+        "crossNodeDependencies": 16,
+        "maxPendingDeliveries": 15,
+        "lastScheduledSendAtMs": 1782620792229
+      }
+    }
+  },
+  "dedupe": {
+    "acceptedEvents": 332,
+    "droppedDuplicates": 0,
+    "filterLatencyMs": {
+      "count": 332,
+      "minMs": 0.0005,
+      "maxMs": 0.192,
+      "avgMs": 0.015
+    },
+    "cacheSize": 332,
+    "activeWindowSeconds": 180
+  },
+  "ordering": {
+    "batches": 1,
+    "correctionBatches": 0,
+    "finalBatches": 1,
+    "orderedEvents": 332,
+    "anomalies": 1,
+    "byAnomalyType": {
+      "sequence_regression": 1
+    },
+    "byAnomalySeverity": {
+      "warning": 1
+    },
+    "byOrderBasis": {
+      "sequence": 332
+    },
+    "byConfidence": {
+      "derived": 8,
+      "proven": 324
+    },
+    "maxWatermarkMs": "1782620733099",
+    "endToEndLatencyMs": {
+      "count": 332,
+      "minMs": 1375,
+      "maxMs": 21131,
+      "avgMs": 11440.768
+    },
+    "postNormalizeLatencyMs": {
+      "count": 332,
+      "minMs": 81,
+      "maxMs": 21068,
+      "avgMs": 11270.503
+    }
+  }
+}

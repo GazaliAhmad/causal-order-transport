@@ -1,0 +1,1 @@
+{"timestampIso":"2026-06-28T04:26:34.474Z","kind":"ordering_anomaly","type":"sequence_regression","severity":"warning","eventId":"edge-e-000000000029","nodeId":"edge-e","relatedEventIds":[],"message":"Sequence regressed for node"}

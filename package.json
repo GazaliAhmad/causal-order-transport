@@ -1,6 +1,6 @@
 {
   "name": "@causal-order/transport",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "WebSocket + JSON transport layer for normalizing node traffic into the event contract expected by the causal-order stack.",
   "author": "Gazali Ahmad",
   "license": "MIT",
@@ -36,9 +36,15 @@
   },
   "keywords": [
     "causal-order",
+    "causal-order-transport",
     "transport",
     "websocket",
     "json",
+    "websocket-json",
+    "ingress",
+    "runtime",
+    "event-envelope",
+    "distributed-events",
     "event-streams",
     "distributed-systems",
     "message-transport",
@@ -50,6 +56,14 @@
     "build": "tsc -p tsconfig.build.json",
     "check": "tsc -p tsconfig.json --noEmit",
     "test:smoke": "npm run build && node scripts/smoke.mjs",
+    "test:multi": "npm run build && node scripts/multi-node.mjs",
+    "test:e2e": "npm run build && node scripts/e2e-pipeline.mjs",
+    "test:harness": "npm run build && node scripts/testing-harness-smoke.mjs",
+    "test:wallclock:smoke": "npm run build && node scripts/wallclock-transport-runtime.mjs --duration 20s --steady-for 10s --report-every 5s --run-name smoke",
+    "test:wallclock:2h": "npm run build && node scripts/wallclock-transport-runtime.mjs --duration 2h --report-every 15m --run-name typical-8node-2h",
+    "test:wallclock:4h": "npm run build && node scripts/wallclock-transport-runtime.mjs --duration 4h --report-every 15m --run-name typical-8node-4h",
+    "test:wallclock:8h": "npm run build && node scripts/wallclock-transport-runtime.mjs --duration 8h --report-every 30m --run-name typical-8node-8h",
+    "test:wallclock:12h": "npm run build && node scripts/wallclock-transport-runtime.mjs --duration 12h --report-every 15m --run-name typical-8node-12h",
     "ci": "npm run check && npm run test:smoke && npm run pack:check",
     "prepack": "npm run build",
     "pack:check": "npm pack --dry-run",
@@ -57,12 +71,14 @@
     "release:check": "npm run ci && npm run publish:dry-run"
   },
   "dependencies": {
+    "@causal-order/dedupe": "^1.1.1",
     "causal-order": "^1.0.0",
     "ws": "^8.18.3"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
     "@types/ws": "^8.18.1",
+    "@causal-order/testing": "^0.1.0",
     "typescript": "^6.0.3"
   }
 }

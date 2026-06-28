@@ -1,0 +1,234 @@
+{
+  "outcome": {
+    "status": "interrupted",
+    "failure": null
+  },
+  "config": {
+    "durationMs": 28800000,
+    "steadyForMs": 8640000,
+    "reportEveryMs": 1800000,
+    "maxLateArrivalMs": 60000,
+    "maxDrainMs": 120000,
+    "batchSize": 200,
+    "outputDir": "artifacts/transport-runs",
+    "nodeIds": [
+      "edge-a",
+      "edge-b",
+      "edge-c",
+      "edge-d",
+      "edge-e",
+      "edge-f",
+      "edge-g",
+      "edge-h"
+    ],
+    "profile": "typical-real-world-mesh",
+    "profileDescription": "Ordinary production-like mesh with slight hotspotting, moderate cross-node coordination, low retry noise, and short latency spikes rather than hostile stalls.",
+    "runName": "typical-8node-8h"
+  },
+  "artifacts": {
+    "runDir": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-11-58-typical-8node-8h",
+    "summaryPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-11-58-typical-8node-8h\\summary.json",
+    "heartbeatPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-11-58-typical-8node-8h\\heartbeat.ndjson",
+    "anomaliesPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-11-58-typical-8node-8h\\anomalies.ndjson",
+    "configPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-28T04-11-58-typical-8node-8h\\config.json"
+  },
+  "timing": {
+    "wallStartedAtIso": "2026-06-28T04:11:58.053Z",
+    "wallEndedAtIso": "2026-06-28T04:25:46.447Z",
+    "wallElapsedMs": 828394,
+    "generationStoppedAtIso": "2026-06-28T04:25:46.430Z",
+    "drainCompletedAtIso": "2026-06-28T04:25:46.431Z"
+  },
+  "process": {
+    "rssBytes": {
+      "samples": 2,
+      "maxRssBytes": 67837952,
+      "finalRssBytes": 67837952,
+      "avgRssBytes": 62203904
+    },
+    "heapUsedBytes": {
+      "samples": 2,
+      "maxHeapUsedBytes": 17494344,
+      "finalHeapUsedBytes": 17494344,
+      "avgHeapUsedBytes": 13064716
+    },
+    "heapTotalBytes": {
+      "samples": 2,
+      "maxHeapTotalBytes": 21798912,
+      "finalHeapTotalBytes": 21798912,
+      "avgHeapTotalBytes": 17240064
+    },
+    "externalBytes": {
+      "samples": 2,
+      "maxExternalBytes": 2721447,
+      "finalExternalBytes": 2721447,
+      "avgExternalBytes": 2708727
+    },
+    "arrayBuffersBytes": {
+      "samples": 2,
+      "maxArrayBuffersBytes": 67667,
+      "finalArrayBuffersBytes": 67667,
+      "avgArrayBuffersBytes": 54967
+    }
+  },
+  "transport": {
+    "receivedEvents": 11550,
+    "peerHints": 0,
+    "errors": 0,
+    "peerStatesByStatus": {
+      "connected": 8
+    },
+    "normalizedByNode": {
+      "edge-e": 1384,
+      "edge-g": 1319,
+      "edge-a": 1767,
+      "edge-b": 1505,
+      "edge-d": 1410,
+      "edge-h": 1428,
+      "edge-f": 1392,
+      "edge-c": 1345
+    },
+    "maxEventQueueDepth": 2,
+    "maxPendingDeliveries": 7,
+    "latencyMs": {
+      "count": 11550,
+      "minMs": 14,
+      "maxMs": 2572,
+      "avgMs": 46.233,
+      "p50Ms": 47,
+      "p95Ms": 64,
+      "p99Ms": 172
+    }
+  },
+  "generator": {
+    "generatedEvents": 11541,
+    "sentEvents": 11550,
+    "duplicatesInjected": 9,
+    "sendErrors": 0,
+    "activeClients": 0,
+    "perNode": {
+      "edge-a": {
+        "generatedEvents": 1766,
+        "sentEvents": 1767,
+        "duplicatesInjected": 1,
+        "sameNodeDependencies": 559,
+        "crossNodeDependencies": 597,
+        "maxPendingDeliveries": 7,
+        "lastScheduledSendAtMs": 1782620745030
+      },
+      "edge-b": {
+        "generatedEvents": 1503,
+        "sentEvents": 1505,
+        "duplicatesInjected": 2,
+        "sameNodeDependencies": 490,
+        "crossNodeDependencies": 505,
+        "maxPendingDeliveries": 5,
+        "lastScheduledSendAtMs": 1782620745151
+      },
+      "edge-c": {
+        "generatedEvents": 1345,
+        "sentEvents": 1345,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 430,
+        "crossNodeDependencies": 473,
+        "maxPendingDeliveries": 6,
+        "lastScheduledSendAtMs": 1782620744279
+      },
+      "edge-d": {
+        "generatedEvents": 1408,
+        "sentEvents": 1410,
+        "duplicatesInjected": 2,
+        "sameNodeDependencies": 447,
+        "crossNodeDependencies": 459,
+        "maxPendingDeliveries": 6,
+        "lastScheduledSendAtMs": 1782620744513
+      },
+      "edge-e": {
+        "generatedEvents": 1383,
+        "sentEvents": 1384,
+        "duplicatesInjected": 1,
+        "sameNodeDependencies": 449,
+        "crossNodeDependencies": 472,
+        "maxPendingDeliveries": 6,
+        "lastScheduledSendAtMs": 1782620745321
+      },
+      "edge-f": {
+        "generatedEvents": 1391,
+        "sentEvents": 1392,
+        "duplicatesInjected": 1,
+        "sameNodeDependencies": 423,
+        "crossNodeDependencies": 487,
+        "maxPendingDeliveries": 5,
+        "lastScheduledSendAtMs": 1782620744839
+      },
+      "edge-g": {
+        "generatedEvents": 1317,
+        "sentEvents": 1319,
+        "duplicatesInjected": 2,
+        "sameNodeDependencies": 468,
+        "crossNodeDependencies": 433,
+        "maxPendingDeliveries": 6,
+        "lastScheduledSendAtMs": 1782620744440
+      },
+      "edge-h": {
+        "generatedEvents": 1428,
+        "sentEvents": 1428,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 437,
+        "crossNodeDependencies": 452,
+        "maxPendingDeliveries": 6,
+        "lastScheduledSendAtMs": 1782620745070
+      }
+    }
+  },
+  "dedupe": {
+    "acceptedEvents": 11541,
+    "droppedDuplicates": 9,
+    "filterLatencyMs": {
+      "count": 11550,
+      "minMs": 0.0003,
+      "maxMs": 0.7831,
+      "avgMs": 0.012,
+      "p50Ms": 0.0087,
+      "p95Ms": 0.0202,
+      "p99Ms": 0.0686
+    },
+    "cacheSize": 2687,
+    "activeWindowSeconds": 180
+  },
+  "ordering": {
+    "batches": 5310,
+    "correctionBatches": 0,
+    "finalBatches": 1,
+    "orderedEvents": 11541,
+    "anomalies": 0,
+    "byAnomalyType": {},
+    "byAnomalySeverity": {},
+    "byOrderBasis": {
+      "sequence": 11541
+    },
+    "byConfidence": {
+      "derived": 9610,
+      "proven": 1931
+    },
+    "maxWatermarkMs": "1782620685293",
+    "endToEndLatencyMs": {
+      "count": 11541,
+      "minMs": 1141,
+      "maxMs": 61095,
+      "avgMs": 58087.66,
+      "p50Ms": 60088,
+      "p95Ms": 60266,
+      "p99Ms": 60381
+    },
+    "postNormalizeLatencyMs": {
+      "count": 11541,
+      "minMs": 1108,
+      "maxMs": 61064,
+      "avgMs": 58042.314,
+      "p50Ms": 60045,
+      "p95Ms": 60222,
+      "p99Ms": 60343
+    }
+  }
+}

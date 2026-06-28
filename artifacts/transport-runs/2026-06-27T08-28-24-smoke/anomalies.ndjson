@@ -1,0 +1,2 @@
+{"timestampIso":"2026-06-27T08:28:53.081Z","kind":"ordering_anomaly","type":"sequence_regression","severity":"warning","eventId":"edge-g-000000000018","nodeId":"edge-g","relatedEventIds":[],"message":"Sequence regressed for node"}
+{"timestampIso":"2026-06-27T08:28:53.082Z","kind":"ordering_anomaly","type":"sequence_regression","severity":"warning","eventId":"edge-c-000000000044","nodeId":"edge-c","relatedEventIds":[],"message":"Sequence regressed for node"}

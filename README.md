@@ -2,7 +2,15 @@
 
 WebSocket + JSON transport layer for normalizing node traffic into the event contract expected by the `causal-order` stack.
 
-Status: ready for early use. This package is meant to be the first transport layer in the `causal-order` ecosystem, with WebSocket + JSON as the v0.1 transport model and room for more adapters later.
+This package currently implements one transport path: WebSocket + JSON.
+
+## Scope
+
+Supported ingress path:
+
+- WebSocket + JSON
+
+Other ingress shapes can be implemented separately against the same event contract and normalization boundary.
 
 ## Relationship to `causal-order` and `@causal-order/dedupe`
 
@@ -25,25 +33,17 @@ WebSocket + JSON -> @causal-order/transport -> @causal-order/dedupe -> causal-or
 
 ## What It Does
 
-This package gives you:
+This package provides:
 
 - a minimal transport contract for start, stop, send, and receive
 - peer state reporting for connect, disconnect, and errors
-- a reference WebSocket + JSON adapter
+- a concrete WebSocket + JSON adapter
 - a default normalizer that converts common node message fields into a `causal-order` event envelope
 
 ## Install
 
-From npm as a user of the package:
-
 ```bash
 npm install @causal-order/transport @causal-order/dedupe causal-order
-```
-
-From source while working on the package itself:
-
-```bash
-npm install
 ```
 
 ## Quick Start
@@ -87,7 +87,7 @@ That keeps the shape friendly for both `@causal-order/dedupe` and `causal-order`
 
 ## Default Wire Message Shape
 
-The first adapter assumes nodes transmit JSON messages over WebSocket.
+The adapter assumes JSON messages over WebSocket.
 
 The default normalizer accepts common fields like:
 
@@ -130,45 +130,13 @@ The intended public API is transport-first:
 - `createEventId()`
 - transport and peer-state types
 
-## For Maintainers
+## Validation
 
-This package is the first concrete transport extraction for the `causal-order` ecosystem. It intentionally starts small around one real-world-common mode: JSON messages over long-lived WebSocket connections.
-
-### Local Development
-
-```bash
-npm run build
-npm run test:smoke
-npm run ci
-npm run pack:check
-```
-
-### First Manual npm Publish
-
-For the first publish, keep it manual before relying on GitHub Actions:
-
-```bash
-npm login
-npm run release:check
-npm publish
-```
-
-### GitHub Repo Setup
-
-If you move this into its own GitHub repository, the current package metadata assumes:
-
-- repo: `https://github.com/GazaliAhmad/causal-order-transport`
-- package: `@causal-order/transport`
-
-Before first publish:
-
-1. Create the GitHub repository.
-2. Add an `NPM_TOKEN` repository secret with npm publish access.
-3. Push the default branch and confirm the `CI` workflow passes.
-4. Publish either with the `Publish` workflow or from a GitHub Release event.
+Validation details are documented separately in [`VALIDATION.md`](https://github.com/GazaliAhmad/causal-order-transport/blob/main/VALIDATION.md).
 
 ## Notes
 
 - This is the transport layer, not the dedupe layer and not the ordering core.
 - The v0.1 package is designed for multiple adapters later, but intentionally implements only the WebSocket + JSON path first.
+- If another deployment needs Kafka, a broker bridge, or another wire protocol, that adapter can be built separately rather than forcing every transport mode into this package immediately.
 - The normalizer is opinionated but replaceable. If your node wire format differs, provide your own `normalizeMessage` function.

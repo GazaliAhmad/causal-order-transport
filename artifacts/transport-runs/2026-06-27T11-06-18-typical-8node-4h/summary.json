@@ -1,0 +1,214 @@
+{
+  "outcome": {
+    "status": "completed",
+    "failure": null
+  },
+  "config": {
+    "durationMs": 14400000,
+    "steadyForMs": 4320000,
+    "reportEveryMs": 900000,
+    "maxLateArrivalMs": 60000,
+    "maxDrainMs": 120000,
+    "batchSize": 200,
+    "outputDir": "artifacts/transport-runs",
+    "nodeIds": [
+      "edge-a",
+      "edge-b",
+      "edge-c",
+      "edge-d",
+      "edge-e",
+      "edge-f",
+      "edge-g",
+      "edge-h"
+    ],
+    "profile": "typical-real-world-mesh",
+    "profileDescription": "Ordinary production-like mesh with slight hotspotting, moderate cross-node coordination, low retry noise, and short latency spikes rather than hostile stalls.",
+    "runName": "typical-8node-4h"
+  },
+  "artifacts": {
+    "runDir": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-06-18-typical-8node-4h",
+    "summaryPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-06-18-typical-8node-4h\\summary.json",
+    "heartbeatPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-06-18-typical-8node-4h\\heartbeat.ndjson",
+    "anomaliesPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-06-18-typical-8node-4h\\anomalies.ndjson",
+    "configPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-06-18-typical-8node-4h\\config.json"
+  },
+  "timing": {
+    "wallStartedAtIso": "2026-06-27T11:06:18.414Z",
+    "wallEndedAtIso": "2026-06-27T15:06:20.830Z",
+    "wallElapsedMs": 14402416,
+    "generationStoppedAtIso": "2026-06-27T15:06:19.385Z",
+    "drainCompletedAtIso": "2026-06-27T15:06:20.806Z"
+  },
+  "process": {
+    "rssBytes": {
+      "samples": 18,
+      "maxRssBytes": 71872512,
+      "finalRssBytes": 71872512,
+      "avgRssBytes": 66100339
+    }
+  },
+  "transport": {
+    "receivedEvents": 250620,
+    "peerHints": 0,
+    "errors": 0,
+    "peerStatesByStatus": {
+      "connected": 8
+    },
+    "normalizedByNode": {
+      "edge-h": 30377,
+      "edge-e": 29976,
+      "edge-d": 30209,
+      "edge-f": 30361,
+      "edge-b": 33107,
+      "edge-a": 37512,
+      "edge-g": 30414,
+      "edge-c": 28664
+    },
+    "maxEventQueueDepth": 17,
+    "maxPendingDeliveries": 114,
+    "latencyMs": {
+      "count": 250620,
+      "minMs": 14,
+      "maxMs": 46076,
+      "avgMs": 580.069,
+      "p50Ms": 77,
+      "p95Ms": 2075,
+      "p99Ms": 10244
+    }
+  },
+  "generator": {
+    "generatedEvents": 249771,
+    "sentEvents": 250620,
+    "duplicatesInjected": 849,
+    "sendErrors": 0,
+    "activeClients": 0,
+    "perNode": {
+      "edge-a": {
+        "generatedEvents": 37398,
+        "sentEvents": 37512,
+        "duplicatesInjected": 114,
+        "sameNodeDependencies": 8050,
+        "crossNodeDependencies": 16566,
+        "maxPendingDeliveries": 114,
+        "lastScheduledSendAtMs": 1782572778422
+      },
+      "edge-b": {
+        "generatedEvents": 32988,
+        "sentEvents": 33107,
+        "duplicatesInjected": 119,
+        "sameNodeDependencies": 7076,
+        "crossNodeDependencies": 14778,
+        "maxPendingDeliveries": 114,
+        "lastScheduledSendAtMs": 1782572777495
+      },
+      "edge-c": {
+        "generatedEvents": 28575,
+        "sentEvents": 28664,
+        "duplicatesInjected": 89,
+        "sameNodeDependencies": 6180,
+        "crossNodeDependencies": 12749,
+        "maxPendingDeliveries": 112,
+        "lastScheduledSendAtMs": 1782572777429
+      },
+      "edge-d": {
+        "generatedEvents": 30104,
+        "sentEvents": 30209,
+        "duplicatesInjected": 105,
+        "sameNodeDependencies": 6282,
+        "crossNodeDependencies": 13599,
+        "maxPendingDeliveries": 113,
+        "lastScheduledSendAtMs": 1782572777829
+      },
+      "edge-e": {
+        "generatedEvents": 29872,
+        "sentEvents": 29976,
+        "duplicatesInjected": 104,
+        "sameNodeDependencies": 6411,
+        "crossNodeDependencies": 13145,
+        "maxPendingDeliveries": 112,
+        "lastScheduledSendAtMs": 1782572777141
+      },
+      "edge-f": {
+        "generatedEvents": 30257,
+        "sentEvents": 30361,
+        "duplicatesInjected": 104,
+        "sameNodeDependencies": 6457,
+        "crossNodeDependencies": 13400,
+        "maxPendingDeliveries": 114,
+        "lastScheduledSendAtMs": 1782572776991
+      },
+      "edge-g": {
+        "generatedEvents": 30322,
+        "sentEvents": 30414,
+        "duplicatesInjected": 92,
+        "sameNodeDependencies": 6440,
+        "crossNodeDependencies": 13624,
+        "maxPendingDeliveries": 111,
+        "lastScheduledSendAtMs": 1782572778312
+      },
+      "edge-h": {
+        "generatedEvents": 30255,
+        "sentEvents": 30377,
+        "duplicatesInjected": 122,
+        "sameNodeDependencies": 6516,
+        "crossNodeDependencies": 13406,
+        "maxPendingDeliveries": 112,
+        "lastScheduledSendAtMs": 1782572778238
+      }
+    }
+  },
+  "dedupe": {
+    "acceptedEvents": 249771,
+    "droppedDuplicates": 849,
+    "filterLatencyMs": {
+      "count": 250620,
+      "minMs": 0.0001,
+      "maxMs": 0.3267,
+      "avgMs": 0.004,
+      "p50Ms": 0.0039,
+      "p95Ms": 0.0073,
+      "p99Ms": 0.0163
+    },
+    "cacheSize": 3351,
+    "activeWindowSeconds": 180
+  },
+  "ordering": {
+    "batches": 110062,
+    "correctionBatches": 0,
+    "finalBatches": 1,
+    "orderedEvents": 249771,
+    "anomalies": 305,
+    "byAnomalyType": {
+      "sequence_regression": 305
+    },
+    "byAnomalySeverity": {
+      "warning": 305
+    },
+    "byOrderBasis": {
+      "sequence": 249771
+    },
+    "byConfidence": {
+      "derived": 218457,
+      "proven": 31314
+    },
+    "maxWatermarkMs": "1782572718401",
+    "endToEndLatencyMs": {
+      "count": 249771,
+      "minMs": 2409,
+      "maxMs": 62309,
+      "avgMs": 60011.915,
+      "p50Ms": 60117,
+      "p95Ms": 60274,
+      "p99Ms": 60387
+    },
+    "postNormalizeLatencyMs": {
+      "count": 249771,
+      "minMs": 113,
+      "maxMs": 62278,
+      "avgMs": 59437.744,
+      "p50Ms": 60037,
+      "p95Ms": 60199,
+      "p99Ms": 60311
+    }
+  }
+}

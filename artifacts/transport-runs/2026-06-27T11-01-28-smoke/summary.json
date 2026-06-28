@@ -1,0 +1,210 @@
+{
+  "outcome": {
+    "status": "completed",
+    "failure": null
+  },
+  "config": {
+    "durationMs": 20000,
+    "steadyForMs": 10000,
+    "reportEveryMs": 5000,
+    "maxLateArrivalMs": 60000,
+    "maxDrainMs": 120000,
+    "batchSize": 200,
+    "outputDir": "artifacts/transport-runs",
+    "nodeIds": [
+      "edge-a",
+      "edge-b",
+      "edge-c",
+      "edge-d",
+      "edge-e",
+      "edge-f",
+      "edge-g",
+      "edge-h"
+    ],
+    "profile": "typical-real-world-mesh",
+    "profileDescription": "Ordinary production-like mesh with slight hotspotting, moderate cross-node coordination, low retry noise, and short latency spikes rather than hostile stalls.",
+    "runName": "smoke"
+  },
+  "artifacts": {
+    "runDir": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-01-28-smoke",
+    "summaryPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-01-28-smoke\\summary.json",
+    "heartbeatPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-01-28-smoke\\heartbeat.ndjson",
+    "anomaliesPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-01-28-smoke\\anomalies.ndjson",
+    "configPath": "C:\\dev\\causal-order-transport\\artifacts\\transport-runs\\2026-06-27T11-01-28-smoke\\config.json"
+  },
+  "timing": {
+    "wallStartedAtIso": "2026-06-27T11:01:28.803Z",
+    "wallEndedAtIso": "2026-06-27T11:01:50.786Z",
+    "wallElapsedMs": 21983,
+    "generationStoppedAtIso": "2026-06-27T11:01:50.775Z",
+    "drainCompletedAtIso": "2026-06-27T11:01:50.775Z"
+  },
+  "process": {
+    "rssBytes": {
+      "samples": 6,
+      "maxRssBytes": 58916864,
+      "finalRssBytes": 57761792,
+      "avgRssBytes": 57333077
+    }
+  },
+  "transport": {
+    "receivedEvents": 271,
+    "peerHints": 0,
+    "errors": 0,
+    "peerStatesByStatus": {
+      "connected": 8
+    },
+    "normalizedByNode": {
+      "edge-d": 43,
+      "edge-b": 34,
+      "edge-a": 38,
+      "edge-h": 35,
+      "edge-c": 40,
+      "edge-e": 25,
+      "edge-f": 30,
+      "edge-g": 26
+    },
+    "maxEventQueueDepth": 6,
+    "maxPendingDeliveries": 10,
+    "latencyMs": {
+      "count": 271,
+      "minMs": 15,
+      "maxMs": 1981,
+      "avgMs": 124.978,
+      "p50Ms": 62,
+      "p95Ms": 530,
+      "p99Ms": 1784
+    }
+  },
+  "generator": {
+    "generatedEvents": 271,
+    "sentEvents": 271,
+    "duplicatesInjected": 0,
+    "sendErrors": 0,
+    "activeClients": 0,
+    "perNode": {
+      "edge-a": {
+        "generatedEvents": 38,
+        "sentEvents": 38,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 12,
+        "crossNodeDependencies": 14,
+        "maxPendingDeliveries": 9,
+        "lastScheduledSendAtMs": 1782558108883
+      },
+      "edge-b": {
+        "generatedEvents": 34,
+        "sentEvents": 34,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 4,
+        "crossNodeDependencies": 14,
+        "maxPendingDeliveries": 9,
+        "lastScheduledSendAtMs": 1782558107981
+      },
+      "edge-c": {
+        "generatedEvents": 40,
+        "sentEvents": 40,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 12,
+        "crossNodeDependencies": 15,
+        "maxPendingDeliveries": 10,
+        "lastScheduledSendAtMs": 1782558107350
+      },
+      "edge-d": {
+        "generatedEvents": 43,
+        "sentEvents": 43,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 13,
+        "crossNodeDependencies": 11,
+        "maxPendingDeliveries": 10,
+        "lastScheduledSendAtMs": 1782558108509
+      },
+      "edge-e": {
+        "generatedEvents": 25,
+        "sentEvents": 25,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 6,
+        "crossNodeDependencies": 12,
+        "maxPendingDeliveries": 8,
+        "lastScheduledSendAtMs": 1782558107992
+      },
+      "edge-f": {
+        "generatedEvents": 30,
+        "sentEvents": 30,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 3,
+        "crossNodeDependencies": 12,
+        "maxPendingDeliveries": 9,
+        "lastScheduledSendAtMs": 1782558108673
+      },
+      "edge-g": {
+        "generatedEvents": 26,
+        "sentEvents": 26,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 6,
+        "crossNodeDependencies": 13,
+        "maxPendingDeliveries": 8,
+        "lastScheduledSendAtMs": 1782558108520
+      },
+      "edge-h": {
+        "generatedEvents": 35,
+        "sentEvents": 35,
+        "duplicatesInjected": 0,
+        "sameNodeDependencies": 8,
+        "crossNodeDependencies": 14,
+        "maxPendingDeliveries": 9,
+        "lastScheduledSendAtMs": 1782558109581
+      }
+    }
+  },
+  "dedupe": {
+    "acceptedEvents": 271,
+    "droppedDuplicates": 0,
+    "filterLatencyMs": {
+      "count": 271,
+      "minMs": 0.0005,
+      "maxMs": 0.0881,
+      "avgMs": 0.007,
+      "p50Ms": 0.0052,
+      "p95Ms": 0.0131,
+      "p99Ms": 0.0504
+    },
+    "cacheSize": 271,
+    "activeWindowSeconds": 180
+  },
+  "ordering": {
+    "batches": 1,
+    "correctionBatches": 0,
+    "finalBatches": 1,
+    "orderedEvents": 271,
+    "anomalies": 0,
+    "byAnomalyType": {},
+    "byAnomalySeverity": {},
+    "byOrderBasis": {
+      "sequence": 271
+    },
+    "byConfidence": {
+      "derived": 8,
+      "proven": 263
+    },
+    "maxWatermarkMs": "1782558048765",
+    "endToEndLatencyMs": {
+      "count": 271,
+      "minMs": 2012,
+      "maxMs": 21904,
+      "avgMs": 10853.661,
+      "p50Ms": 10126,
+      "p95Ms": 20411,
+      "p99Ms": 21686
+    },
+    "postNormalizeLatencyMs": {
+      "count": 271,
+      "minMs": 1187,
+      "maxMs": 21857,
+      "avgMs": 10728.683,
+      "p50Ms": 10000,
+      "p95Ms": 20364,
+      "p99Ms": 21639
+    }
+  }
+}

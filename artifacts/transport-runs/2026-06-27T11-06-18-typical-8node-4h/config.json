@@ -1,0 +1,35 @@
+{
+  "durationMs": 14400000,
+  "steadyForMs": 4320000,
+  "steadyRatio": 0.3,
+  "reportEveryMs": 900000,
+  "maxLateArrivalMs": 60000,
+  "maxDrainMs": 120000,
+  "batchSize": 200,
+  "outputDir": "artifacts/transport-runs",
+  "profile": {
+    "name": "typical-real-world-mesh",
+    "description": "Ordinary production-like mesh with slight hotspotting, moderate cross-node coordination, low retry noise, and short latency spikes rather than hostile stalls.",
+    "nodeWeights": {
+      "edge-a": 1.25,
+      "edge-b": 1.1,
+      "edge-c": 0.95,
+      "edge-d": 1,
+      "edge-e": 1,
+      "edge-f": 1,
+      "edge-g": 1,
+      "edge-h": 1
+    }
+  },
+  "runName": "typical-8node-4h",
+  "nodeIds": [
+    "edge-a",
+    "edge-b",
+    "edge-c",
+    "edge-d",
+    "edge-e",
+    "edge-f",
+    "edge-g",
+    "edge-h"
+  ]
+}
